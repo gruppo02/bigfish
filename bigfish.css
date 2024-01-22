@@ -1,0 +1,742 @@
+@font-face {
+    font-family: 'Tim Burton';
+    src: url('fonts/alice-in-wonderland.ttf') format('truetype');
+    font-weight: 500
+}
+
+/* @font-face {
+    font-family: 'Trinigan FG';
+    src: url('fonts/trinigan-fg.ttf') format('truetype')
+} */
+
+html {
+    background-color: #1d1d1d;
+    transition: all .5s ease-in-out;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Tim Burton', Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 0 4px;
+    font-size: 70px;
+    font-weight: 10;
+    color: white
+}
+
+svg {
+    z-index: 1
+}
+
+.numbers {
+    font-family:'Tim Burton', Times, serif;
+    font-size: 15px;
+    color: white
+}
+
+.luogo {
+    position: absolute;
+    z-index: -1;
+    margin-left: 9px;
+    margin-right: 9px;
+    transition: all .5s ease-in-out;
+    display: flex; /* Aggiunto display flex per abilitare le proprietà flex */
+    justify-content: center; /* Centra orizzontalmente all'interno di .luogo */
+    align-items: flex-start;
+    opacity: 100%
+}
+
+.luogo-copia {
+    position: absolute;
+    margin-left: 9px;
+    margin-right: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+#reality1, #reality2, #reality3, #reality4, #reality5, #reality6, #reality7, #reality8 {
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.0);
+    filter: none;
+}
+
+.illustrazioni {
+    width: 30%;
+    height: auto;
+    opacity: 0.3;
+    padding: 0 0 0 12%;
+    transition: all .5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(#00000097 0 0 7px)
+}
+
+.smaller-illustrazioni {
+    height: 110%;
+    opacity: 0.3;
+    padding: 0 0 0 12%;
+    transition: all .5s ease-in-out;
+    filter: drop-shadow(#00000097 0 0 7px)
+}
+
+#casaedward img {
+    height: 90%
+}
+
+.luogo-copia.is-active {
+    filter: none;
+    backdrop-filter: none;
+}
+
+.luogo-copia.is-active .illustrazioni {
+    transition: all .5s ease-in-out;
+    transform: scale(200%);
+    opacity: 1;
+}
+
+.luogo-copia.is-active .smaller-illustrazioni {
+    transition: all .5s ease-in-out;
+    transform: scale(200%);
+    opacity: 1;
+}
+
+.luogo-copia.is-active #spectre2{
+    transition: all .5s ease-in-out;
+    transform: scale(165%);
+    opacity: 1;
+    z-index: 2
+}
+
+
+.icontop-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .3s ease-in-out;
+    top: -6%;
+    padding: 0 0 0 2%;
+    margin: 0 9px
+}
+
+@font-face {
+    font-family: 'Hedvig';
+    src: url('fonts/hedvig_letters_serif.ttf') format('truetype')
+}
+
+body, html {
+    margin: 0;
+    padding: 0
+}
+
+h1 {
+    font-family: 'Tim Burton', Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 0 4px;
+    margin: 200px 0 400px;
+    font-size: 180px;
+    font-weight: 10;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+#descrizione {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+#freccia {
+    position: fixed;
+    bottom: 3vh;
+    left: 46%;
+    width: 15vh;
+    transition: all 0.5s ease-in-out;
+    animation: animazioneUpDown 3s ease-in-out infinite;
+}
+
+@keyframes animazioneUpDown {
+    0%, 100% {
+        transform: translateY(0); /* La posizione iniziale e finale è a translateY(0) */
+    }
+    50% {
+        transform: translateY(-2vw); /* Al 50%, sposta l'elemento verso l'alto di 20px */
+    }
+}
+
+#animazione-top {
+    position: absolute;
+    top: 7%;
+    left: 15vw;
+    width: 70vw;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+    animation: UpDown 8s ease-in-out infinite;
+}
+
+@keyframes UpDown {
+    0%, 100% { top: 4%; } /* Posizione iniziale a destra */
+    50% { top: 9%; } /* Posizione finale a sinistra */
+}
+
+.testo-descrizione {
+    font-family: 'Hedvig', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 1000px;
+    padding: 80px 0 0 0;
+}
+
+
+
+.icon-name {
+    font-family: 'Hedvig', Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 24px;
+    color: white;
+    left: -99999px
+}
+
+#text-container {
+    font-size: 18px;
+    color: white;
+    font-family: 'Hedvig', Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 9997;
+    width: 20%;
+    text-shadow: 1px 1px 2px black, 0 0 5px black;
+}
+
+#img-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+}
+
+.icon {
+    position: absolute;
+    height: 65px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+    left: -99999px
+}
+
+
+#img-amoscalloway, #img-northerwinslow {
+    height: 50px
+}
+
+#img-northerwinslow {
+    top: 8px
+}
+
+#img-josephine {
+    height: 80px;
+}
+
+#img-sandra, #img-strega {
+    top: -5px
+}
+
+#text-container.fade-out {
+    opacity: 0;
+}
+
+.hover-text {
+    position: absolute;
+    display: flex;
+    top: -40px;
+    width: 500px;
+    font-family: 'Hedvig', Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px black, 0 0 5px black;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    z-index: 9
+}
+
+.hover-text.hover-text-visible {
+  opacity: 1;
+}
+
+/* Stile per il bottone */
+.button {
+    opacity: 0;
+    height: 80px;
+    width: 120px;
+    position: fixed;
+    bottom: 20px;
+    right: -9999px;
+    padding: 10px 10px;
+    z-index: 9999;
+    background-color: transparent;
+    background-image: url(icons/legenda.png);
+    background-size: 120px 80px; /* Opzione: regola la dimensione dell'immagine */
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out
+}
+
+#button-text {
+    font-family: 'Tim Burton', Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+}
+
+/* Stile per il popup */
+.popup {
+    display: none;
+    position: fixed;
+    bottom: calc(90px + 20px); /* Altezza del bottone + 10px di spazio */
+    right: 30px; /* Distanza da sinistra */
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid hsl(0, 0%, 32%);
+    padding-left: 20px;
+    padding-top: 5px;
+    z-index: 9998; /* Imposta z-index superiore per il popup */
+    column-count: 2; /* Divide il testo in due colonne */
+    column-gap: 5px;
+    border-radius: 10px 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.popup.show {
+    display: block; /* Mostra il popup quando ha la classe 'show' */
+}
+.icon-name2 {
+    font-family: 'Hedvig', Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 12px;
+    color: white;
+}
+
+.icon2 {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* SEZIONE ANIMAZIONI */
+
+.container_lago1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 20vw; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+
+.img1_lago1,
+.img2_lago1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%; /* Rendi le immagini larghe al 100% del contenitore */
+}
+
+.img2_lago1 {
+    left: 100%; /* Posiziona l'immagine fuori dallo schermo a destra */
+    animation: slideLeft 25s linear infinite; /* Aggiunge l'animazione di scorrimento */
+}
+
+@keyframes slideLeft {
+    0% { left: 30%; } /* Posizione iniziale a destra */
+    100% { left: -30%; } /* Posizione finale a sinistra */
+}
+
+
+.container_casastrega{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 20vw; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+
+.img1_casastrega{
+    position: absolute;
+    top: -5vw;
+    bottom: 0;
+    width: 100%
+}
+.img2_casastrega {
+    position: absolute;
+    top: -5vw;
+    bottom: 0;
+    width: 100%;
+    opacity: 0; /* Imposta l'opacità iniziale a 0 */
+    transition: opacity 0.5s ease-in-out; /* Aggiunge un effetto di transizione */
+    animation: pulse 3s infinite alternate; /* Aggiunge l'animazione di pulsazione */
+}
+@keyframes pulse {
+    0% { opacity: 0; } /* Opacità iniziale */
+    100% { opacity: 1; } /* Opacità finale */
+}
+
+
+.container_ashton {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 20vw; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+.img1_ashton {
+    position: absolute;
+    top: -13vw;
+    bottom: 0;
+    height: 220%
+}
+.img2_ashton {
+    position: absolute;
+    top: -13vw;
+    bottom: 0;
+    height: 220%;
+    animation: sway 4s ease-in-out infinite alternate; /* Applica l'animazione di sway */
+    transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+}
+
+@keyframes sway {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg) skewX(-0.5deg) skewY(0.5deg);
+    }
+    100% {
+        transform: rotateY(15deg) rotateX(0deg) skewX(0.5deg) skewY(-0.5deg);
+    }
+}
+
+
+.container_spectre {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 20vw; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+    perspective: 1000px; /* Aggiunge prospettiva per l'effetto 3D */
+}
+.img1_spectre {
+    position: absolute;
+    top: -22vw;
+    bottom: 0;
+    height: 250%
+}
+.img2_spectre {
+    position: absolute;
+    top: -20vw;
+    bottom: 0;
+    height: 230%;
+    transform-origin: center top; /* Punto di origine della trasformazione */
+    animation: tilt 5s infinite alternate; /* Aggiunge l'animazione di oscillazione */
+}
+
+@keyframes tilt {
+    0% {
+        transform: rotateX(2deg); /* Inclina l'immagine verso di te */
+    }
+    100% {
+        transform: rotateX(-4deg); /* Inclina l'immagine in direzione opposta */
+    }
+}
+
+
+.container_circo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 20vw; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto;
+}
+
+.img1_circo {
+    position: absolute;
+    top: -15vw;
+    bottom: 0;
+    height: 250%
+}
+
+.img2_circo {
+    position: absolute;
+    height: 8%;
+    bottom: -9.7vw;
+    left: 60%;
+    animation: slideLeft2 8s ease infinite, rotate2 8s ease infinite; /* Applica entrambe le animazioni */
+    
+}
+
+.img3_circo {
+    position: absolute;
+    left: -8%;
+    top: -14.8vw;
+    height: 245%;
+    opacity: 0; /* Imposta l'opacità iniziale a 0 */
+    transition: opacity 0.5s ease-in-out; /* Aggiunge un effetto di transizione */
+    animation: pulse2 3s infinite alternate; /* Aggiunge l'animazione di pulsazione */
+    
+}
+
+@keyframes pulse2 {
+    0% { opacity: 0; } /* Opacità iniziale */
+    100% { opacity: 1; } /* Opacità finale */
+}
+@keyframes rotate2 {
+0%, 100% {
+transform: rotate(360deg);
+transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+} 
+50% {
+transform: rotate(0deg);
+transform-origin: center center; /* Assicura che il punto di ancoraggio rimanga al centro */
+}
+}
+@keyframes slideLeft2 {
+0%, 100% { 
+left: 60%; /* Posizione iniziale a destra */
+} 
+50% { 
+left: 40%; /* Posizione finale a sinistra, spostandosi di 300px verso sinistra rispetto al bordo destro */
+}
+}
+
+.container_auburn {
+    position: relative;
+}
+.img1_auburn {
+    position: absolute;
+    height: 20vw;
+    left: -13vw;
+    top: -10vw;
+    bottom: 0;
+}
+.img2_auburn {
+    position: absolute;
+    height: 27vw;
+    left: -16vw;
+    top: -14vw;
+    bottom: 0;
+    animation: sway2 4s ease-in-out infinite alternate; /* Applica l'animazione di sway */
+    transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+}
+
+@keyframes sway2 {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg) skewX(-0.5deg) skewY(0.5deg);
+    }
+    100% {
+        transform: rotateY(13deg) rotateX(0deg) skewX(0.5deg) skewY(-0.5deg);
+    }
+}
+
+.container_aereo {
+    position: relative;
+    left: 23vw;
+    top: -3.5vw;
+    width: 58vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+
+.img1_aereo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22%; /* Rendi le immagini larghe al 100% del contenitore */
+}
+
+.img2_aereo {
+    position: absolute;
+    height: 18vw; /* Posiziona l'immagine fuori dallo schermo a destra */
+    animation: slideLeftAereo 15s linear infinite; /* Aggiunge l'animazione di scorrimento */
+}
+.img3_aereo {
+    position: absolute;
+    top: 7.6vw;
+    width: 1vw;
+    animation: slideLeftElica 15s linear infinite, rotate 0.5s linear infinite; /* Aggiunge l'animazione di scorrimento */
+}
+
+@keyframes slideLeftAereo {
+    0% { left: 10%; } /* Posizione iniziale a destra */
+    100% { left: -10%; } /* Posizione finale a sinistra */
+}
+@keyframes rotate {
+    from {
+transform: rotate(360deg);
+transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+} 
+to {
+transform: rotate(0deg);
+transform-origin: center center; /* Assicura che il punto di ancoraggio rimanga al centro */
+}
+}
+@keyframes slideLeftElica {
+    0% { left: 16.7%; } /* Posizione iniziale a destra */
+    100% { left: -3.3%; } /* Posizione finale a sinistra */
+}
+
+.container_vietnam {
+    position: relative;
+    height: 50vh; /* Imposta l'altezza al 50% della viewport height */
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+
+.img1_vietnam {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%; /* Rendi le immagini larghe al 100% del contenitore */
+}
+.img1_vietnam {
+    top: 2vw;
+}
+
+.img2_vietnam {
+    position: absolute;
+    top: 5vw;
+    bottom: 0;
+    width: 20%;
+    left: 10vw;
+    opacity: 60%;
+    animation: cadi 10s linear infinite, oscilla 5s ease infinite;
+}
+
+@keyframes cadi {
+    0% { top: -10%; } /* Posizione iniziale a destra */
+    100% { top: 30%; } /* Posizione finale a sinistra */
+}
+
+@keyframes oscilla {
+    0%, 100% {
+transform: rotate(-10deg);
+transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+} 
+50% {
+transform: rotate(-1deg);
+transform-origin: center center; /* Assicura che il punto di ancoraggio rimanga al centro */
+}
+}
+
+.container_spectre2 {
+    position: relative;
+}
+.img1_spectre2 {
+    position: absolute;
+    height: 20vw;
+    left: -15vw;
+    top: -10vw;
+    bottom: 0;
+}
+.img2_spectre2 {
+    position: absolute;
+    height: 16vw;
+    left: -12vw;
+    top: -10vw;
+    animation: sway3 4s ease-in-out infinite alternate; /* Applica l'animazione di sway */
+    transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+}
+
+@keyframes sway3 {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg) skewX(-0.5deg) skewY(0.5deg);
+    }
+    100% {
+        transform: rotateY(15deg) rotateX(0deg) skewX(0.5deg) skewY(-0.5deg);
+    }
+}
+
+.container_casajenny {
+    position: relative;
+}
+.img1_casajenny {
+    position: absolute;
+    height: 12vw;
+    left: -10vw;
+    top: -6vw;
+    bottom: 0;
+}
+
+.img2_casajenny {
+    position: absolute;
+    height: 9vw;
+    left: -10.5vw;
+    top: -4.5vw;
+    bottom: 0;
+    animation: sway4 4s ease-in-out infinite alternate; /* Applica l'animazione di sway */
+    transform-origin: center center; /* Imposta il punto di ancoraggio al centro */
+}
+
+@keyframes sway4 {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg) skewX(-0.5deg) skewY(0.5deg);
+    }
+    100% {
+        transform: rotateY(15deg) rotateX(0deg) skewX(0.5deg) skewY(-0.5deg);
+    }
+}
+
+.container_lago2 {
+    position: relative;
+    height: 25vw;
+    width: 70vw; /* Imposta la larghezza al 70% della viewport width */
+    margin: auto; /* Centra il contenuto orizzontalmente */
+}
+
+.img1_lago2,
+.img2_lago2 {
+    position: absolute;
+    top: 5vw;
+    left: 1.5vw;
+    bottom: 0;
+    width: 90%; /* Rendi le immagini larghe al 100% del contenitore */
+}
+
+.img2_lago2 {
+    width: 130%;
+    top: 2.5vw;
+    left: -2.8vw;
+    animation: opacità 10s linear infinite; /* Aggiunge l'animazione di scorrimento */
+}
+
+@keyframes opacità {
+    0% { opacity: 0%; } /* Posizione iniziale a destra */
+    25% { opacity: 80%; }
+    50% { opacity: 80%; }
+    75% {opacity: 80%}
+    100% {opacity: 0%} /* Posizione finale a sinistra */
+}
